@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VoiceShop AI - Voice Shopping Assistant</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <button class="back-button" onclick="goBack()">
+        <i class="fas fa-arrow-left"></i> Back
+    </button>
+
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1 class="logo">🛍️ VoiceShop AI</h1>
+            <p class="tagline">Just speak what you want to buy - AI finds the best deals!</p>
+        </div>
+
+        <!-- Main Interface -->
+        <div id="mainInterface">
+            <!-- Voice Interface -->
+            <div class="voice-interface">
+                <button class="voice-button" id="voiceButton" aria-label="Start voice search">
+                    <i class="fas fa-microphone"></i>
+                </button>
+                <div class="voice-status" id="voiceStatus">Click the microphone to start voice search</div>
+                <div class="voice-text" id="voiceText"></div>
+                
+                <div class="or-divider">
+                    <div class="or-label">OR</div>
+                    <hr class="or-hr">
+                </div>
+                
+                <input type="text" id="searchInput" class="search-input" placeholder="Type what you're looking for...">
+                <button class="search-button" id="searchButton">
+                    <i class="fas fa-search"></i> Search
+                </button>
+            </div>
+
+            <!-- Instructions -->
+            <div class="instructions">
+                <div class="instruction-item">
+                    <i class="fas fa-microphone"></i>
+                    <span>Click the mic and say: "Find me wireless headphones under $100"</span>
+                </div>
+                <div class="instruction-item">
+                    <i class="fas fa-search"></i>
+                    <span>AI searches multiple stores for the best deals instantly</span>
+                </div>
+                <div class="instruction-item">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Compare prices, ratings, and buy from your favorite store</span>
+                </div>
+            </div>
+
+            <!-- AI Suggestions -->
+            <div class="ai-suggestions">
+                <div class="suggestion-title">
+                    <i class="fas fa-lightbulb"></i>
+                    Try These Popular Searches
+                </div>
+                <div class="suggestion-item" onclick="searchFor('wireless headphones under $100')">
+                    🎧 Wireless headphones under $100
+                </div>
+                <div class="suggestion-item" onclick="searchFor('gaming mouse with RGB lighting')">
+                    🖱️ Gaming mouse with RGB lighting
+                </div>
+                <div class="suggestion-item" onclick="searchFor('smartphone with good camera')">
+                    📱 Smartphone with good camera
+                </div>
+                <div class="suggestion-item" onclick="searchFor('laptop for students')">
+                    💻 Laptop for students
+                </div>
+                <div class="suggestion-item" onclick="searchFor('fitness tracker waterproof')">
+                    ⌚ Fitness tracker waterproof
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading -->
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p class="loading-message">AI is searching for the best deals...</p>
+        </div>
+
+        <!-- Results Section -->
+        <div class="results-section" id="resultsSection">
+            <div class="results-header">
+                <h2 class="results-title" id="resultsTitle"></h2>
+                <p class="results-count" id="resultsCount"></p>
+            </div>
+
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be inserted here -->
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body> 
+</html>
